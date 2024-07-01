@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <header>
+        <div class="row center-align">
+            <div class="col s12 #1e88e5 blue darken-1">
+
+                <h1>
+                    <marquee behavior="scroll" direction="left">My Basic Webpage</marquee>
+                </h1>
+
+            </div>
+            <div class="col l4 m6 s12 name-text" id="fullName"><h3>{{user.fullName}}</h3></div>
+            <div class="col l4 m6 s12"><img src="{{user.photo}}" width="200" alt="{{user.fullName}}" class="images">
+            </div>
+        </div>
+    </header>
+    <div class="row center-align #4db6ac teal lighten-2">
+        <h3 class="center-align">My Favourite City</h3>
+        <h3>{{city.name}}</h3>
+        <div class="col l4 m6 s12"><img src="{{city.photo}}" width="400" alt="{{city.name}}"></div>
+        <div class="col l4 m6 s12">
+            <p>{{city.description}}</p>
+        </div>
+    </div>
+    <div class="block">
+        <h3 class="center-align">Foreign Language</h3>
+    </div>
+    <div class="#1e88e5 blue darken-1">
+        <table>
+            <thead>
+                <tr>
+                    <th>Portuguese</th>
+                    <th>English</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each foreignLanguage.phrases}}
+                <tr>
+                    <td>{{this.foreignLanguage}}</td>
+                    <td>{{this.englishPhrase}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <style>
+        body {
+            background-image: url(images/table-mountain-feature-onsite-2.webp);
+        }
+
+        div#fullName {
+            font-size: xxx-large;
+            margin-top: 85px;
+        }
+
+        @media (max-width: 600px) {
+            .zig-zag {
+                float: right !important;
+            }
+
+            div#fullName {
+                font-size: xxx-large;
+                margin-top: 85px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+
+            }
+
+            div#fullName {
+                font-size: xxx-large;
+                margin-top: 85px;
+            }
+
+            .header h1 {
+                font-size: 1.2rem;
+
+                .animated-header {
+                    background-image: url("images/header-background.jpg");
+                    background-size: cover;
+                    animation: move-header 5s linear infinite;
+                }
+
+                @keyframes move-header {
+                    from {
+                        background-position: 100% center;
+                    }
+
+                    to {
+                        background-position: -100% center;
+                    }
+                }
+
+            }
+
+
+        }
+
+        .zig-zag-img {
+            float: left !important;
+        }
+        h3 {
+            color: black;
+        }
+
+        p {
+            font-size: 15px;
+        }
+    </style>
+    <div class="#4db6ac teal lighten-2">
+        <h3 class="center-align">My favourite Subjects</h3>
+        <p class="center-align">I studied Bachelor of Commerce in Information Management at Damelin City Campus</p>
+        <div class="row">
+            <div class="col l4 m4 s12">
+                <div class="row">
+                    <h4 class="center-align">{{favouriteSubjects.0.name}}</h4>
+                    <p class="col s6">{{favouriteSubjects.0.description}}</p>
+                    <img src="{{favouriteSubjects.0.photo}}" width="150" alt="{{favouriteSubjects.0.name}}"
+                        class="images col s6">
+                </div>
+            </div>
+            <div class="col l4 m4 s12">
+                <div class="row">
+                    <h4 class="center-align">{{favouriteSubjects.1.name}}</h4>
+                    <p class="col s6 zig-zag">{{favouriteSubjects.1.description}}</p>
+                    <img src="{{favouriteSubjects.1.photo}}" width="150" alt="{{favouriteSubjects.1.name}}"
+                        class="images col s6 zig-zag-img">
+                </div>
+            </div>
+            <div class="col l4 m4 s12">
+                <div class="row">
+                    <h4 class="center-align">{{favouriteSubjects.2.name}}</h4>
+                    <p class="col s6">{{favouriteSubjects.2.description}}</p>
+                    <img src="{{favouriteSubjects.2.photo}}" width="150" alt="{{favouriteSubjects.2.name}}"
+                        class="images col s6">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
